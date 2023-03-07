@@ -13,5 +13,6 @@ export class AdminLayoutComponent {
 
   logout(event: Event) {
     event.preventDefault()
+    this.router.navigate(['/admin', 'login'])
   }
 }
