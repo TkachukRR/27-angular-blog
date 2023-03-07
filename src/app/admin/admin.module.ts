@@ -11,7 +11,8 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
     RouterModule.forChild([
       {path: '', component: AdminLayoutComponent, children:[
           {path: '', redirectTo: '/admin/login', pathMatch: "full"},
-          {path: 'login', component: LoginPageComponent}
+          {path: 'login', component: LoginPageComponent},
+          {path: 'dashboard', component: DashboardPageComponent},
         ]}
     ])
   ],
