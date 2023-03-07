@@ -4,6 +4,7 @@ import {RouterModule} from "@angular/router";
 import { AdminLayoutComponent } from './shared/components/admin-layout/admin-layout.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
+import { CreatePageComponent } from './create-page/create-page.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
   declarations: [
     AdminLayoutComponent,
     LoginPageComponent,
-    DashboardPageComponent
+    DashboardPageComponent,
+    CreatePageComponent
   ]
 })
 export class AdminModule{}
