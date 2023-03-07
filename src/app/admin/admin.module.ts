@@ -9,6 +9,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
     CommonModule,
     RouterModule.forChild([
       {path: '', component: AdminLayoutComponent, children:[
+          {path: 'login', component: LoginPageComponent}
         ]}
     ])
   ],
