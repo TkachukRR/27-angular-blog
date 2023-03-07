@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AdminLayoutComponent {
 
+  logout(event: Event) {
+    event.preventDefault()
+  }
 }
