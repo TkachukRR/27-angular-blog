@@ -16,6 +16,7 @@ import { EditPageComponent } from './edit-page/edit-page.component';
           {path: 'login', component: LoginPageComponent},
           {path: 'dashboard', component: DashboardPageComponent},
           {path: 'create', component: CreatePageComponent},
+          {path: 'edit', component: EditPageComponent},
         ]}
     ])
   ],
