@@ -14,6 +14,7 @@ import { CreatePageComponent } from './create-page/create-page.component';
           {path: '', redirectTo: '/admin/login', pathMatch: "full"},
           {path: 'login', component: LoginPageComponent},
           {path: 'dashboard', component: DashboardPageComponent},
+          {path: 'create', component: CreatePageComponent},
         ]}
     ])
   ],
