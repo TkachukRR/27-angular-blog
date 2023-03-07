@@ -7,7 +7,7 @@ import { AdminLayoutComponent } from './shared/components/admin-layout/admin-lay
   imports: [
     CommonModule,
     RouterModule.forChild([
-
+      {path: '', component: AdminLayoutComponent}
     ])
   ],
   exports:[
