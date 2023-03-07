@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-admin-layout',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-layout.component.scss']
 })
 export class AdminLayoutComponent {
+
+  constructor(private router: Router) {
+  }
 
   logout(event: Event) {
     event.preventDefault()
