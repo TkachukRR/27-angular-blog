@@ -3,6 +3,7 @@ import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 import { AdminLayoutComponent } from './shared/components/admin-layout/admin-layout.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
   ],
   declarations: [
     AdminLayoutComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    DashboardPageComponent
   ]
 })
 export class AdminModule{}
