@@ -22,4 +22,9 @@ export class LoginPageComponent implements OnInit{
       ]),
     })
   }
+
+  submit() {
+    if (this.form.invalid) return
+
+  }
 }
