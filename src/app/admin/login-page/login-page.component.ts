@@ -8,18 +8,19 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class LoginPageComponent implements OnInit{
 
-  form: FormGroup = new FormGroup({
-    email: new FormControl(null, [
-      Validators.required,
-      Validators.email
-    ]),
-    password: new FormControl(null, [
-      Validators.required,
-      Validators.minLength(6)
-    ]),
-  })
+  form: FormGroup
 
   constructor() {
+    this.form = new FormGroup({
+      email: new FormControl(null, [
+        Validators.required,
+        Validators.email
+      ]),
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(6)
+      ]),
+    })
   }
 
   ngOnInit() {
@@ -27,6 +28,5 @@ export class LoginPageComponent implements OnInit{
 
   submit() {
     if (this.form.invalid) return
-
   }
 }
