@@ -1,4 +1,6 @@
-<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+<form class="card"
+      [formGroup]="form"
+      (ngSubmit)="submit()">
   <h2>Enter to admin panel</h2>
 
   <div class="form-control">
@@ -21,5 +23,7 @@
     type="submit"
     class="btn btn-primary"
     [disabled]="form.invalid"
-  >Submit</button>
+  >
+    Submit
+  </button>
 </form>
