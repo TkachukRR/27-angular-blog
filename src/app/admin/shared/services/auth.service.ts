@@ -18,4 +18,6 @@ export class AuthService{
   isAuthenticated(): boolean {
     return !!this.token
   }
+
+  private setToken(){}
 }
