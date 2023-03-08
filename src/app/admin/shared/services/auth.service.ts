@@ -6,10 +6,16 @@ import {User} from "../../../shared/interfaces";
 export class AuthService{
   constructor(private http: HttpClient) {
   }
-
+  get token(): string {
+    return ''
+  }
   login(user: User) {
     this.http.post('', user)
   }
 
   logout(){}
+
+  isAuthenticated(): boolean {
+    return !!this.token
+  }
 }
