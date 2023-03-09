@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {User} from "../../../shared/interfaces";
 import {Observable} from "rxjs";
 import {environment} from "../../../../environments/environment";
+import {FbAuthResponse} from "../../../../environments/interface";
 
 @Injectable()
 export class AuthService{
@@ -21,6 +22,6 @@ export class AuthService{
     return !!this.token
   }
 
-  private setToken(){
+  private setToken(response: FbAuthResponse){
   }
 }
