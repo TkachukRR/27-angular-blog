@@ -11,7 +11,7 @@ export class AuthService{
     return ''
   }
   login(user: User): Observable<any> {
-    return this.http.post('', user)
+    return this.http.post(``, user)
   }
 
   logout(){}
@@ -20,5 +20,6 @@ export class AuthService{
     return !!this.token
   }
 
-  private setToken(){}
+  private setToken(){
+  }
 }
