@@ -27,14 +27,15 @@ export class AuthService {
       )
   }
 
-  logout(){}
+  logout(){
+    this.setToken(null)
+  }
 
   isAuthenticated(): boolean {
     return !!this.token
   }
 
   private setToken(response: any){
-    console.log(response)
     if (response) {
       const expiresDate = new Date(new Date().getTime() + +response.expiresIn * 1000)
       localStorage.setItem('fb-token', response.idToken)
@@ -44,6 +45,5 @@ export class AuthService {
     if(!response) {
       localStorage.clear()
     }
-
   }
 }
