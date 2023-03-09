@@ -35,6 +35,7 @@ export class LoginPageComponent implements OnInit{
     if (this.form.invalid) return
 
     const user: User = {
+      returnSecureToken: false,
       email: this.form.value.email,
       password: this.form.value.password,
     }
