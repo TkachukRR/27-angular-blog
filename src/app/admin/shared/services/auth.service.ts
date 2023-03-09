@@ -27,6 +27,8 @@ export class AuthService{
   }
 
   private setToken(response: any){
-    console.log(response)
+    const expiresDate = new Date(new Date().getTime() + +response.expiresIn * 1000)
+    localStorage.setItem('fb-token', response.expiresIn)
+    localStorage.setItem('fb-token-exp', expiresDate.toString())
   }
 }
