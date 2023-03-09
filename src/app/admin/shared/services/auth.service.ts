@@ -1,16 +1,23 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {FbAuthResponse, User} from "../../../shared/interfaces";
+import { User} from "../../../shared/interfaces";
 import {Observable} from "rxjs";
 import {environment} from "../../../../environments/environment";
 import {tap} from "rxjs/operators";
 
 @Injectable()
-export class AuthService{
+export class AuthService {
   constructor(private http: HttpClient) {
   }
-  get token(): string {
-    return ''
+
+  get token(): string | null {
+    const expiresDate: string = localStorage.getItem('fb-token-exp') || ''
+
+    if (new Date() > new Date(expiresDate)) {
+      this.logout()
+      return null
+    }
+    return localStorage.getItem('fb-token')
   }
   login(user: User): Observable<any> {
     user.returnSecureToken = true
@@ -27,8 +34,16 @@ export class AuthService{
   }
 
   private setToken(response: any){
-    const expiresDate = new Date(new Date().getTime() + +response.expiresIn * 1000)
-    localStorage.setItem('fb-token', response.expiresIn)
-    localStorage.setItem('fb-token-exp', expiresDate.toString())
+    console.log(response)
+    if (response) {
+      const expiresDate = new Date(new Date().getTime() + +response.expiresIn * 1000)
+      localStorage.setItem('fb-token', response.idToken)
+      localStorage.setItem('fb-token-exp', expiresDate.toString())
+    }
+
+    if(!response) {
+      localStorage.clear()
+    }
+
   }
 }

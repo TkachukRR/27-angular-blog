@@ -11,16 +11,7 @@ import {Router} from "@angular/router";
 })
 export class LoginPageComponent implements OnInit{
 
-  form: FormGroup = new FormGroup({
-    email: new FormControl(null, [
-      Validators.required,
-      Validators.email
-    ]),
-    password: new FormControl(null, [
-      Validators.required,
-      Validators.minLength(6)
-    ]),
-  })
+  form!: FormGroup
 
   constructor(
     private auth: AuthService,
@@ -29,13 +20,22 @@ export class LoginPageComponent implements OnInit{
   }
 
   ngOnInit() {
+    this.form = new FormGroup({
+      email: new FormControl(null, [
+        Validators.required,
+        Validators.email
+      ]),
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(6)
+      ]),
+    })
   }
 
   submit() {
     if (this.form.invalid) return
 
     const user: User = {
-      returnSecureToken: false,
       email: this.form.value.email,
       password: this.form.value.password,
     }
