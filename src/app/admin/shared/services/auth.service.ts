@@ -1,12 +1,13 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import { User} from "../../../shared/interfaces";
-import {Observable, throwError} from "rxjs";
+import {Observable, Subject, throwError} from "rxjs";
 import {environment} from "../../../../environments/environment";
 import {catchError, tap} from "rxjs/operators";
 
 @Injectable()
 export class AuthService {
+  public error$: Subject<string> = new Subject<string>()
   constructor(private http: HttpClient) {
   }
 
@@ -32,10 +33,13 @@ export class AuthService {
     const {message} = error.error.error
       switch (message){
         case 'EMAIL_NOT_FOUND':
+          this.error$.next('Email isn`t in DB')
           break
         case 'INVALID_PASSWORD':
+          this.error$.next('Invalid password')
           break
         case 'INVALID_EMAIL':
+          this.error$.next('Invalid email')
           break
       }
     return throwError(error)
