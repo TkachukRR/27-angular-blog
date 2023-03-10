@@ -30,7 +30,14 @@ export class AuthService {
 
   private handleError(error: HttpErrorResponse){
     const {message} = error.error.error
-
+      switch (message){
+        case 'EMAIL_NOT_FOUND':
+          break
+        case 'INVALID_PASSWORD':
+          break
+        case 'INVALID_EMAIL':
+          break
+      }
     return throwError(error)
   }
 
