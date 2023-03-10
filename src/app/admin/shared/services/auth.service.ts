@@ -10,8 +10,8 @@ export class AuthService {
   constructor(private http: HttpClient) {
   }
 
-  get token(): string | null {
-    const expiresDate: string = localStorage.getItem('fb-token-exp') || ''
+  get token(): string {
+    const expiresDate: string = localStorage.getItem('fb-token-exp')
 
     if (new Date() > new Date(expiresDate)) {
       this.logout()
