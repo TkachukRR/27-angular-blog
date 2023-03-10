@@ -15,7 +15,7 @@ export class LoginPageComponent implements OnInit{
   submited = false
 
   constructor(
-    private auth: AuthService,
+    public auth: AuthService,
     private router: Router,
     ) {
   }
