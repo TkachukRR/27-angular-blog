@@ -16,4 +16,11 @@ export class CreatePageComponent implements OnInit{
       author: new FormControl(null, Validators.required),
     })
   }
+
+  submit() {
+    if (this.form.invalid) {
+      return
+    }
+
+  }
 }
