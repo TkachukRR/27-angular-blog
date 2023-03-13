@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-create-page',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-page.component.scss']
 })
 export class CreatePageComponent {
-
+  form : FormGroup
 }
