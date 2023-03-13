@@ -1,1 +1,19 @@
-<p>create-page works!</p>
+<form action="">
+  <h1>Create new post</h1>
+
+  <div
+    class="form-control"
+    [ngClass]="{invalid : form.get('title')?.touched && form.get('title')?.invalid}"
+  >
+    <label for="title">Post title:</label>
+    <input id="title" type="text" formControlName="title">
+    <div
+      *ngIf="form.get('title')?.touched && form.get('title')?.invalid"
+      class="validation"
+    >
+      <small>Validation error - </small>
+      <small *ngIf="form.get('title')?.errors?.['required'] ">can not be empty</small>
+    </div>
+  </div>
+
+</form>
