@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Post} from "../../shared/interfaces";
 
 @Component({
   selector: 'app-create-page',
@@ -22,5 +23,11 @@ export class CreatePageComponent implements OnInit{
       return
     }
 
+    const post: Post = {
+      title: this.form.value.title,
+      text: this.form.value.text,
+      author: this.form.value.author,
+      date: new Date(),
+    }
   }
 }
