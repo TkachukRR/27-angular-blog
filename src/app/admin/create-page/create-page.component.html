@@ -12,26 +12,26 @@
       class="validation"
     >
       <small>Validation error - </small>
-      <small *ngIf="form.get('title')?.errors?.['required'] ">can not be empty</small>
+      <small *ngIf="form.get('title')?.errors?.['required'] ">Enter post title</small>
     </div>
   </div>
 
   <div class="form-control">
-    <label>Post content</label>
+    <label>Post content:</label>
   </div>
 
   <div
     class="form-control"
     [ngClass]="{invalid : form.get('author')?.touched && form.get('author')?.invalid}"
   >
-    <label for="author">Authro name:</label>
+    <label for="author">Author name:</label>
     <input id="author" type="text" formControlName="author">
     <div
       *ngIf="form.get('author')?.touched && form.get('author')?.invalid"
       class="validation"
     >
       <small>Validation error - </small>
-      <small *ngIf="form.get('author')?.errors?.['required'] ">can not be empty</small>
+      <small *ngIf="form.get('author')?.errors?.['required'] ">Enter author name</small>
     </div>
   </div>
 
