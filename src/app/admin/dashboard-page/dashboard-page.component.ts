@@ -25,4 +25,8 @@ export class DashboardPageComponent implements OnInit, OnDestroy{
       this.pSub.unsubscribe()
     }
   }
+
+  remove(id: string) {
+
+  }
 }
