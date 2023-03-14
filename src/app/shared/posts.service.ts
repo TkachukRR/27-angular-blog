@@ -32,4 +32,8 @@ export class PostsService {
           }))
     }))
   }
+
+  remove(id: string) {
+    this.http.delete<void>(`${environment.fbDbUrl}/posts/${id}.json`)
+  }
 }
