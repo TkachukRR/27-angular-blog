@@ -11,7 +11,7 @@ import {AlertService} from "../shared/services/alert.service";
   templateUrl: './edit-page.component.html',
   styleUrls: ['./edit-page.component.scss']
 })
-export class EditPageComponent implements OnInit, OnDestroy{
+export class EditPageComponent implements OnInit, OnDestroy {
   form: FormGroup
   post: Post
   submitted = false
@@ -19,7 +19,7 @@ export class EditPageComponent implements OnInit, OnDestroy{
 constructor(
   private route: ActivatedRoute,
   private postsService: PostsService,
-  private alert: AlertService,
+  private alert: AlertService
 ) {
 }
 
@@ -61,7 +61,7 @@ ngOnInit(){
       // date: new Date()
     }).subscribe( () => {
       this.submitted = false
-      this.alert.danger('Changed post')
+      this.alert.warning('Edited post')
     })
   }
 }
