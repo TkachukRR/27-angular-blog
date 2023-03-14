@@ -30,4 +30,8 @@ ngOnInit(){
       })
     })
   }
+
+  submit() {
+
+  }
 }
