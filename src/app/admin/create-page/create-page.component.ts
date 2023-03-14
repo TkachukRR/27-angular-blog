@@ -37,6 +37,6 @@ export class CreatePageComponent implements OnInit{
       this.form.reset()
     })
 
-    console.log(post)
+    // console.log(post)
   }
 }
