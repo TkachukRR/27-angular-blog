@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-alert',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./alert.component.scss']
 })
 export class AlertComponent {
+  @Input() delay = 5000
+
+  public text: string
+  public type = 'success'
 
 }
