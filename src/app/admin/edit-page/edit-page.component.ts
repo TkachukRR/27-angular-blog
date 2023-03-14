@@ -12,6 +12,8 @@ import {Post} from "../../shared/interfaces";
 })
 export class EditPageComponent implements OnInit{
   form: FormGroup
+  post: Post
+  submitted = false
 constructor(
   private route: ActivatedRoute,
   private postsService: PostsService
@@ -24,6 +26,7 @@ ngOnInit(){
         return this.postsService.getById(params['id'])
       })
     ).subscribe((post:Post) => {
+      this.post = post
       this.form = new FormGroup({
         title: new FormControl(post.title, Validators.required),
         text: new FormControl(post.text, Validators.required)
@@ -32,6 +35,23 @@ ngOnInit(){
   }
 
   submit() {
+    if (this.form.invalid) {
+      return
+    }
 
+    this.submitted = true
+
+    this.postsService.update({
+      ...this.post,
+      text: this.form.value.text,
+      title: this.form.value.title,
+      // id: this.post.id,
+      // text: this.form.value.text,
+      // title: this.form.value.text,
+      // author: this.post.author,
+      // date: new Date()
+    }).subscribe( () => {
+      this.submitted = false
+    })
   }
 }
